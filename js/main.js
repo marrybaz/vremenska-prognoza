@@ -10,8 +10,8 @@ function ucitaj() {
         return request.json();
     })
       .then(result => {
-        console.log(result.main.temp);
-        d('ispis').innerText = `Vremenska prognoza za ${result.sys.name} je ${(result.main.temp-273.15).toFixed(1)} stepeni.`
+        console.log(result);
+        d('ispis').innerText = `Vremenska prognoza za ${result.name} je ${(result.main.temp-273.15).toFixed(1)} stepeni.`
        
       })
   }
