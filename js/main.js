@@ -4,7 +4,8 @@ let d = id => document.getElementById(id);
 function ucitaj() {
     
     let grad = d('location').value;
-    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+grad+'&APPID=7646f7548ba1b2c60b152bfe7750967d';
+//    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+grad+'&APPID=7646f7548ba1b2c60b152bfe7750967d';
+    let url = 'http://api.openweathermap.org/data/2.5/forecast?q='+grad+'&units=metric&APPID=7646f7548ba1b2c60b152bfe7750967d';
     fetch(url)
     .then(function (request) {
         return request.json();
