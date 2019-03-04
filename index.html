@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vreme</title>
     <!--  -->
-    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap/bootstrap.min.css" />
-    <script src="bootstrap/jquery.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="bootstrap/bootstrap.min.css" /> -->
+    <!-- <script src="bootstrap/jquery.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script> -->
 
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <style>
@@ -22,11 +22,11 @@
   
     <div class="container">
         <form class="find-location" action="">
-            <input type="text" placeholder="Find your location...">
-            <input type="submit" value="Find">
+            <input id="location" type="text" placeholder="Find your location...">
+            <input id="find" type="submit" value="Find">
         </form>
         <div class="grid">
-           <div class="grid-item1">Ponedeljak</div>
+           <div class="grid-item1"><div id="ispis"></div></div>
            <div class="grid-item2">Utorak</div>
            <div class="grid-item3">Sreda</div>
            <div class="grid-item4">Cetvrtak</div>
@@ -41,6 +41,6 @@
 
     <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
    
-    <script src="js/main1.js"></script>
+    <script src="js/main.js"></script>
 
 </body>

@@ -1,36 +1,23 @@
-class Heroj {
-    constructor(ime, energija) {
-        this.ime = ime;
-        this.energija = energija;
-        this.iskustvo = 0;
-    }
+let d = id => document.getElementById(id);
 
-    napadni(borac) {
-        if (this.energija <= 0 || borac.energija<= 0) return
 
-        let en = Math.round(Math.random() * 20)
-        borac.energija -= en
-        this.iskustvo+=en*30
-        console.log(`${borac.ime} je izgubio ${en} energije`)
-        if (borac.energija <= 0) console.log(`${borac.ime} je mrtav`)
-    }
-}
-class Mika extends Heroj { //ova klasa samo dodaje jos neka svojstva odredjenom objektu
-    constructor(ime, energija){
-        super(ime, energija)
-        this.bojaKoze = "zelena"
-    }
-}
-
-let mika = new Mika("Milan", 20);
-let laza = new Heroj("Luka", 53);
-let anja = new Heroj("Anja", 100);
-let milica = new Heroj("Mila", 62);
-
-for(let i = 0; i<10; i++){
-    mika.napadni(laza)
-    laza.napadni(mika)
-}
+function ucitaj() {
+    
+    let grad = d('location').value;
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+grad+'&APPID=7646f7548ba1b2c60b152bfe7750967d';
+    fetch(url)
+    .then(function (request) {
+        return request.json();
+    })
+      .then(result => {
+        console.log(result.main.temp);
+        d('ispis').innerText = `Vremenska prognoza za ${result.sys.name} je ${(result.main.temp-273.15).toFixed(1)} stepeni.`
+       
+      })
+  }
+  
+  d('find').addEventListener('click', ucitaj)
 
 
 
+ 
